@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --aws-squid-ink: #232f3e;
+  --aws-sidebar: #1b2a4a;
+  --aws-sidebar-hover: #243354;
+  --aws-orange: #ec7211;
+  --aws-blue: #0972d3;
+  --aws-blue-hover: #0561b8;
+  --aws-bg: #f2f3f3;
+  --aws-border: #d5dbdb;
+  --aws-text: #16191f;
+  --aws-text-secondary: #545b64;
+  --aws-success: #037f0c;
+  --aws-error: #d13212;
+  --aws-info: #0972d3;
+  --aws-warning: #f89256;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Amazon Ember", "Helvetica Neue", Roboto, Arial, sans-serif;
+  color: var(--aws-text);
+  background: var(--aws-bg);
+  margin: 0;
+}
+
+/* AWS-style scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #888; }
+
+/* AWS button base */
+.aws-btn {
+  @apply inline-flex items-center px-4 py-1.5 text-sm font-normal rounded-lg border cursor-pointer transition-colors;
+}
+
+.aws-btn-primary {
+  @apply aws-btn bg-[#0972d3] text-white border-[#0972d3] hover:bg-[#0561b8];
+}
+
+.aws-btn-secondary {
+  @apply aws-btn bg-white text-[#16191f] border-[#d5dbdb] hover:bg-[#fafafa];
+}
+
+.aws-btn-danger {
+  @apply aws-btn bg-white text-[#d13212] border-[#d13212] hover:bg-red-50;
+}
+
+.aws-btn-link {
+  @apply text-[#0972d3] hover:text-[#0561b8] hover:underline cursor-pointer bg-transparent border-none text-sm;
+}
+
+/* AWS-style input */
+.aws-input {
+  @apply w-full px-3 py-1.5 text-sm border border-[#d5dbdb] rounded focus:outline-none focus:ring-2 focus:ring-[#0972d3] focus:border-[#0972d3] bg-white;
+}
+
+.aws-select {
+  @apply w-full px-3 py-1.5 text-sm border border-[#d5dbdb] rounded focus:outline-none focus:ring-2 focus:ring-[#0972d3] focus:border-[#0972d3] bg-white appearance-none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+}
+
+.aws-label {
+  @apply block text-sm font-bold text-[#16191f] mb-1;
+}
+
+.aws-description {
+  @apply text-xs text-[#545b64] mb-1;
+}
+
+/* AWS table */
+.aws-table {
+  @apply w-full text-sm border-collapse;
+}
+
+.aws-table thead {
+  @apply bg-[#fafafa] border-b-2 border-[#d5dbdb];
+}
+
+.aws-table th {
+  @apply text-left px-4 py-2.5 text-xs font-bold text-[#545b64] uppercase tracking-wider;
+}
+
+.aws-table td {
+  @apply px-4 py-2.5 border-b border-[#eaeded];
+}
+
+.aws-table tbody tr:hover {
+  @apply bg-[#f7f8f8];
+}
+
+/* AWS card / panel */
+.aws-panel {
+  @apply bg-white border border-[#d5dbdb] rounded-lg;
+}
+
+.aws-panel-header {
+  @apply px-5 py-3 border-b border-[#d5dbdb] font-bold text-lg;
+}
+
+.aws-panel-body {
+  @apply p-5;
+}
